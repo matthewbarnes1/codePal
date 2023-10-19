@@ -8,11 +8,44 @@ TODO:
 - foodFor (species the food can be used for)
 */
 
-foodName: {
-    type: String,
-    enum: ['Chicken', 'Beef', 'Salmon'],  
-    required: true
-},
+const { Schema, model } = require('mongoose');
+
+const foodSchema = new Schema({
+    foodName: {
+        type: String,
+        enum: ['Chicken', 'Beef', 'Salmon'],  
+        required: true
+    },
+    // TODO: add eH and pH values for each food
+    
+    eH: { 
+        type: Number,
+        required: true,
+        default: 1
+    },
+    pH: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    foodAge: { // TODO: expiration date of food? 
+        type: Number,
+        required: true,
+        default: x // TODO:  we need to change this to some arbitrage value 
+    },
+    foodFor: { //* species food can be used for
+        type: String,
+        enum: ['cat', 'dog', 'rabbit'],
+        required: true,
+    }
+});
+
+const Food = model('Food', foodSchema);
+
+module.exports = Food;
+
+
+
 
 
 

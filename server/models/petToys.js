@@ -26,12 +26,12 @@ const toySchema = new Schema({
         required: true,
         default: 1
     },
-    toyAge: { //* how long toy can be used for (if toyAge == x, toy removed from petToys array )
-        type: Number,
+    toyAge: { // TODO:  how long toy can be used for (if toyAge == x, toy removed from petToys array )
+        type: Variable,
         required: true,
         default: 0
     },
-    toyFor: { //* species toy can be used for
+    toyFor: { // * species toy can be used for
         type: String,
         enum: ['cat', 'dog', 'rabbit'],
         required: true,
