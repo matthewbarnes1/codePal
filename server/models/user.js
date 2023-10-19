@@ -10,8 +10,10 @@ TODO:
 // user.js
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcryptjs');
+const Pet = require('./pets');
 
 const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
 
 const userSchema = new Schema({
     email: {
@@ -38,7 +40,7 @@ const userSchema = new Schema({
         set: value => bcrypt.hashSync(value, 10)
     },
     pets: [{
-        type: Schema.Types.ObjectId,  
+        type: Schema.Types.ObjectId,
         ref: 'Pet'
     }]
 });

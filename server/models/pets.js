@@ -13,7 +13,11 @@ TODO:
 - PetFood: [ref] */
 // TODO: petImage 
 
+
 const { Schema, model } = require('mongoose');
+const Toy = require('./petToys');
+const Accessory = require('./petAcc');
+const Food = require('./petFood');
 
 const petSchema = new Schema({
     species: {
@@ -48,9 +52,9 @@ const petSchema = new Schema({
         default: 8 //* default value when pet is created
 
     },
-    PetToys: [{
+    petToys: [{
         type: Schema.Types.ObjectId,
-        ref: 'Toy'  
+        ref: 'Toy'
     }],
     PetAcc: [{
         type: Schema.Types.ObjectId,
