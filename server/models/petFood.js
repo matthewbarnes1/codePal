@@ -8,5 +8,11 @@ TODO:
 - foodFor (species the food can be used for)
 */
 
+foodName: {
+    type: String,
+    enum: ['Chicken', 'Beef', 'Salmon'],  
+    required: true
+},
+
 
 
