@@ -1,3 +1,5 @@
+const pets = require('./petSeed')
+
 const users = [
     {
       id: "1",
@@ -25,5 +27,5 @@ const users = [
     }
   ];
   
-  module.exports = { pets, users };
+  module.exports = { users };
   
