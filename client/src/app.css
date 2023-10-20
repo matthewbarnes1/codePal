@@ -1,39 +1,60 @@
-.app {
+main {
   text-align: center;
 }
-
-ul {
-  list-style: none;
-  margin: 10px 0;
-  padding: 0;
-}
-
-.student-list {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th {
-  background: lightgreen;
+.cp-dashboard {
+  display: flex;
+flex-direction: column;
   padding: 10px;
+
 }
 
-th,
-td {
-  border: 1px solid grey;
+.cp-dashboard-alert {
+  
+  text-align: center;
+  margin: 10px;
+  
 }
 
-.add-student {
-  margin: 20px 0;
+.cp-viewing-area {
+
+  display: flex;
+flex-direction: row;
 }
 
-.add-student button,
-.add-student input,
-.add-student select {
-  height: 40px;
+.cp-viewing-area-left {
+  flex: 1 1 auto;
+display: flex;
+flex-direction: column;
+}
+
+.cp-viewing-area-center {
+border: thick double #32a1ce;
+  display: flex;
+flex-direction: column;
+
+}
+
+.cp-viewing-area-codePal {
+  width: 300px;
+  height: 300px;
+  border: thick double green;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;  
+  justify-content: center;
+  align-items: end;
+  background-image: url("./assets/bg-white-brick.jpeg");
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-size: 300px 300px;
+
+  }
+
+.cp-viewing-area-controls {
+  display: flex;
+  justify-content: space-between;
+}
+.cp-viewing-area-right {
+  flex: 1 1 auto;
 }
