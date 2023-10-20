@@ -1,10 +1,19 @@
 import { useState, useEffect } from "react";
+// import { animated } from "@react-spring/web";
+import { useSpring, animated } from "@react-spring/web";
 
 function ViewCodePal() {
   // Change the default state of temp to 75 degrees.
   const [emotional, setEmotional] = useState(10);
   const [physical, setPhysical] = useState(10);
   const [position, setPosition] = useState(100);
+  const [props, api] = useSpring(
+    () => ({
+      from: { x: 0 },
+      to: { x: 100 },
+    }),
+    []
+  );
 
   // const codePalName = props.pet.name;
   const codePalName = "BRUNO";
@@ -50,6 +59,17 @@ function ViewCodePal() {
     setPhysical(physical + 2);
   };
 
+  const handleSpringClick = () => {
+    api.start({
+      from: {
+        x: 0,
+      },
+      to: {
+        x: 300,
+      },
+    });
+  };
+
   return (
     <main>
       <div className="cp-dashboard">
@@ -91,7 +111,11 @@ function ViewCodePal() {
           </div>
 
           <div className="cp-viewing-area-center">
-            <div className="cp-viewing-area-codePal">{codePalAvatar}</div>
+            <div className="cp-viewing-area-codePal">
+              <animated.div style={props} onClick={handleSpringClick}>
+                {codePalAvatar}
+              </animated.div>
+            </div>
             <div className="cp-viewing-area-controls">
               <button
                 type="button"
