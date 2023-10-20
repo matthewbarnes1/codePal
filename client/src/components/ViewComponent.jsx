@@ -1,100 +1,85 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { START_CAR, STOP_CAR, ADD_CAR } from "../utils/actions";
+import { useState, useEffect } from "react";
 
-export default function ViewComponent() {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+function ViewCodePal() {
+  // Change the default state of temp to 75 degrees.
+  const [emotional, setEmotional] = useState(10);
+  const [physical, setPhysical] = useState(10);
+  const [position, setPosition] = useState(100);
 
-  const [newCarMake, setNewCarMake] = useState("");
-  const [newCarModel, setNewCarModel] = useState("");
-  const [newCarYear, setNewCarYear] = useState("");
+  // const codePalName = props.pet.name;
+  const codePalName = "BRUNO";
+  // const codePalName = props.pet.avatar;
+  const codePalAvatar = "🐶";
+
+  // const currentToy = props.toy;
+  // const currentFood = props.food;
+
+  // useEffect for metrics and doc title emoticon
+  useEffect(() => {
+    // render metrics panel
+    // render emoticon for doc title
+  });
+
+  useEffect(() => {
+    // render position
+  }, [position]);
+
+  // Handler for moving left the temp by 1
+  const moveLeft = () => {
+    setPosition(position - 1);
+  };
+
+  // Handler for decreasing the temp by 1
+  const moveRight = () => {
+    setPosition(position + 1);
+  };
+
+  // Handler for decreasing the temp by 1
+  const feedFood = () => {
+    // use currentFood.eH for emotional
+    // use currentFood.pH for emotional
+    setEmotional(emotional + 2);
+    setPhysical(physical + 1);
+  };
+
+  const playToy = () => {
+    setEmotional(emotional + 1);
+    setPhysical(physical + 2);
+  };
 
   return (
-    <>
-      <h1>codePal</h1>
-      <section className="car-input">
-        <div>
-          <div className="add-car">
-            Add a car:
-            <label for="pet-select">Choose a pet:</label>
-            <select name="pets" id="pet-select">
-              <option value="">--Please choose an option--</option>
-              <option value="dog">Dog</option>
-              <option value="cat">Cat</option>
-              <option value="hamster">Hamster</option>
-              <option value="parrot">Parrot</option>
-              <option value="spider">Spider</option>
-              <option value="goldfish">Goldfish</option>
-            </select>
-            <input
-              defaultValue={newCarMake}
-              onChange={(event) => setNewCarMake(event.target.value)}
-              placeholder="New car make..."
-              type="text"
-            />
-            <input
-              defaultValue={newCarModel}
-              onChange={(event) => setNewCarModel(event.target.value)}
-              placeholder="New car model..."
-              type="text"
-            />
-            <input
-              defaultValue={newCarYear}
-              onChange={(event) => setNewCarYear(event.target.value)}
-              placeholder="New car year..."
-              type="text"
-            />
-            <button
-              onClick={() =>
-                dispatch({
-                  type: ADD_CAR,
-                  payload: {
-                    make: newCarMake,
-                    model: newCarModel,
-                    year: newCarYear,
-                  },
-                })
-              }
-            >
-              Add Car
-            </button>
-          </div>
+    <main>
+      <div className="">
+        {codePalName} {codePalAvatar} Viewing Area
+      </div>
+
+      <div className="d-flex flex-row justify-content-end">
+        <div className="d-flex flex-column ">Here goes the buy panel</div>
+        <div className="flex-fill">
+          <p className="card-text">
+            Current Emotional Health: {emotional} happiness
+          </p>
+          <p className="card-text">
+            Current Physical Health: {physical} strength
+          </p>
+          <p className="card-text">Current Position: {position} x-direction</p>
+          <button type="button" className="btn btn-primary" onClick={moveLeft}>
+            Left
+          </button>{" "}
+          <button type="button" className="btn btn-primary" onClick={moveRight}>
+            Right
+          </button>{" "}
+          <button type="button" className="btn btn-primary" onClick={feedFood}>
+            Food
+          </button>{" "}
+          <button type="button" className="btn btn-primary" onClick={playToy}>
+            Play
+          </button>{" "}
         </div>
-      </section>
-      <section className="car-list">
-        {console.log(state)}
-        {state.cars.map((car) => (
-          <div key={car.id} id={car.id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
-              {car.model} <br />
-              <span style={{ fontSize: "1rem" }}>
-                This car was manufactured in {car.year}
-              </span>
-            </h4>
-            <div className="card-body bg-light p-2">
-              <p>{car.make}</p>
-              <code>
-                Car ID:
-                {car.id}
-              </code>
-            </div>
-            <span style={{ fontSize: "1rem" }}>
-              {car.isRunning ? "Car is running 🏎️" : "Car is off 💤"}
-              <button
-                id="turnOn"
-                onClick={
-                  !car.isRunning
-                    ? () => dispatch({ type: START_CAR, payload: car.id })
-                    : () => dispatch({ type: STOP_CAR, payload: car.id })
-                }
-              >
-                Toggle Engine
-              </button>
-            </span>
-          </div>
-        ))}
-      </section>
-    </>
+        <div>Here goes the metrics panel</div>
+      </div>
+    </main>
   );
 }
+
+export default ViewCodePal;
