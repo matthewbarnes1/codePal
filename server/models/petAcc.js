@@ -13,7 +13,7 @@ const { Schema, model } = require('mongoose');
 const accSchema = new Schema({
     accName: {
         type: String,
-        enum: ['Collar', 'Leash', 'Bowtie'],  
+        // enum: ['Collar', 'Leash', 'Bowtie'],  
         required: true
     },
     eH: { 
