@@ -49,34 +49,48 @@ function ViewCodePal() {
 
   return (
     <main>
-      <div className="">
-        {codePalName} {codePalAvatar} Viewing Area
-      </div>
-
-      <div className="d-flex flex-row justify-content-end">
-        <div className="d-flex flex-column ">Here goes the buy panel</div>
-        <div className="flex-fill">
-          <p className="card-text">
-            Current Emotional Health: {emotional} happiness
-          </p>
-          <p className="card-text">
-            Current Physical Health: {physical} strength
-          </p>
-          <p className="card-text">Current Position: {position} x-direction</p>
-          <button type="button" className="btn btn-primary" onClick={moveLeft}>
-            Left
-          </button>{" "}
-          <button type="button" className="btn btn-primary" onClick={moveRight}>
-            Right
-          </button>{" "}
-          <button type="button" className="btn btn-primary" onClick={feedFood}>
-            Food
-          </button>{" "}
-          <button type="button" className="btn btn-primary" onClick={playToy}>
-            Play
-          </button>{" "}
+      <div className="cp-dashboard">
+        <div className="p-5 m-2 text-center">
+          {codePalName} {codePalAvatar} Viewing Area
         </div>
-        <div>Here goes the metrics panel</div>
+        <div className="text-center cp-viewing-area-alert">
+          Comments will go here
+        </div>
+        <div className="cp-viewing-area">
+          <div className="cp-viewing-area-left">Here goes the buy panel</div>
+          <div className="cp-viewing-area-center">
+            <p className="">Current Emotional Health: {emotional} happiness</p>
+            <p className="">Current Physical Health: {physical} strength</p>
+            <p className="">Current Position: {position} x-direction</p>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={moveLeft}
+            >
+              Left
+            </button>{" "}
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={moveRight}
+            >
+              Right
+            </button>{" "}
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={feedFood}
+            >
+              Food
+            </button>{" "}
+            <button type="button" className="btn btn-primary" onClick={playToy}>
+              Play
+            </button>{" "}
+          </div>
+          <div className="cp-viewing-area-right">
+            Here goes the metrics panel
+          </div>
+        </div>
       </div>
     </main>
   );
