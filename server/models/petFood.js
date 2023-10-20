@@ -31,7 +31,7 @@ const foodSchema = new Schema({
     foodAge: { // TODO: expiration date of food? 
         type: Number,
         required: true,
-        default: x // TODO:  we need to change this to some arbitrage value 
+        default: 1 // TODO:  we need to change this to some arbitrage value 
     },
     foodFor: { //* species food can be used for
         type: String,

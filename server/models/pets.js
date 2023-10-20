@@ -13,7 +13,6 @@ TODO:
 - PetFood: [ref] */
 // TODO: petImage 
 
-
 const { Schema, model } = require('mongoose');
 const Toy = require('./petToys');
 const Accessory = require('./petAcc');

@@ -27,7 +27,7 @@ const toySchema = new Schema({
         default: 1
     },
     toyAge: { // TODO:  how long toy can be used for (if toyAge == x, toy removed from petToys array )
-        type: Variable,
+        type: Number,
         required: true,
         default: 0
     },

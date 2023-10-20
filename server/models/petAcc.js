@@ -27,7 +27,7 @@ const accSchema = new Schema({
         default: 1
     },
     accAge: { //* how long accessory can be used for (if accAge == x, accessory removed from petAcc array )
-        type: Variable,
+        type: Number,
         required: true,
         default: 0
     },
