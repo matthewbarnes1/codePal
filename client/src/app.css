@@ -1,6 +1,9 @@
+main {
+  text-align: center;
+}
 .cp-dashboard {
   display: flex;
-  flex-flow: column nowarp;
+flex-direction: column;
   padding: 10px;
 
 }
@@ -8,7 +11,6 @@
 .cp-dashboard-alert {
   
   text-align: center;
-  flex: 1 1 auto;
   margin: 10px;
   
 }
@@ -16,6 +18,43 @@
 .cp-viewing-area {
 
   display: flex;
-  flex-flow: row wrap;
+flex-direction: row;
+}
 
+.cp-viewing-area-left {
+  flex: 1 1 auto;
+display: flex;
+flex-direction: column;
+}
+
+.cp-viewing-area-center {
+border: thick double #32a1ce;
+  display: flex;
+flex-direction: column;
+
+}
+
+.cp-viewing-area-codePal {
+  width: 300px;
+  height: 300px;
+  border: thick double green;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;  
+  justify-content: center;
+  align-items: end;
+  background-image: url("./assets/bg-white-brick.jpeg");
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-size: 300px 300px;
+
+  }
+
+.cp-viewing-area-controls {
+  display: flex;
+  justify-content: space-between;
+}
+.cp-viewing-area-right {
+  flex: 1 1 auto;
 }

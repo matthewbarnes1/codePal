@@ -29,12 +29,13 @@ function ViewCodePal() {
     setPosition(position - 1);
   };
 
-  // Handler for decreasing the temp by 1
+  // Handler for right by 1
   const moveRight = () => {
     setPosition(position + 1);
   };
 
-  // Handler for decreasing the temp by 1
+  // Handler for feeding food/treat
+  // TODO pass food to check foodType
   const feedFood = () => {
     // use currentFood.eH for emotional
     // use currentFood.pH for emotional
@@ -42,6 +43,8 @@ function ViewCodePal() {
     setPhysical(physical + 1);
   };
 
+  // Handler for playing with
+  //TODO pass toy to check toyType
   const playToy = () => {
     setEmotional(emotional + 1);
     setPhysical(physical + 2);
@@ -50,18 +53,17 @@ function ViewCodePal() {
   return (
     <main>
       <div className="cp-dashboard">
-        <div className="p-5 m-2 text-center">
+        <div className="">
           {codePalName} {codePalAvatar} Viewing Area
         </div>
+
         <div className="text-center cp-dashboard-alert">
           Comments will go here
         </div>
+
         <div className="cp-viewing-area">
-          <div className="cp-viewing-area-left">Here goes the buy panel</div>
-          <div className="cp-viewing-area-center">
-            <p className="">Current Emotional Health: {emotional} happiness</p>
-            <p className="">Current Physical Health: {physical} strength</p>
-            <p className="">Current Position: {position} x-direction</p>
+          <div className="cp-viewing-area-left">
+            PURCHASE
             <button
               type="button"
               className="btn btn-primary"
@@ -87,8 +89,45 @@ function ViewCodePal() {
               Play
             </button>{" "}
           </div>
+
+          <div className="cp-viewing-area-center">
+            <div className="cp-viewing-area-codePal">{codePalAvatar}</div>
+            <div className="cp-viewing-area-controls">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={moveLeft}
+              >
+                Left
+              </button>{" "}
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={moveRight}
+              >
+                Right
+              </button>{" "}
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={feedFood}
+              >
+                Food
+              </button>{" "}
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={playToy}
+              >
+                Play
+              </button>{" "}
+            </div>
+          </div>
           <div className="cp-viewing-area-right">
-            Here goes the metrics panel
+            <h3>METRICS PANEL</h3>
+            <p className="">Current Emotional Health: {emotional} happiness</p>
+            <p className="">Current Physical Health: {physical} strength</p>
+            <p className="">Current Position: {position} x-direction</p>
           </div>
         </div>
       </div>
