@@ -1,39 +1,21 @@
-.app {
-  text-align: center;
-}
-
-ul {
-  list-style: none;
-  margin: 10px 0;
-  padding: 0;
-}
-
-.student-list {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th {
-  background: lightgreen;
+.cp-dashboard {
+  display: flex;
+  flex-flow: column nowarp;
   padding: 10px;
+
 }
 
-th,
-td {
-  border: 1px solid grey;
+.cp-dashboard-alert {
+  
+  text-align: center;
+  flex: 1 1 auto;
+  margin: 10px;
+  
 }
 
-.add-student {
-  margin: 20px 0;
-}
+.cp-viewing-area {
 
-.add-student button,
-.add-student input,
-.add-student select {
-  height: 40px;
+  display: flex;
+  flex-flow: row wrap;
+
 }

@@ -53,7 +53,7 @@ function ViewCodePal() {
         <div className="p-5 m-2 text-center">
           {codePalName} {codePalAvatar} Viewing Area
         </div>
-        <div className="text-center cp-viewing-area-alert">
+        <div className="text-center cp-dashboard-alert">
           Comments will go here
         </div>
         <div className="cp-viewing-area">
