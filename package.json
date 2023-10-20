@@ -14,5 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.9.4",
+    "bcryptjs": "^2.4.3"
   }
 }
