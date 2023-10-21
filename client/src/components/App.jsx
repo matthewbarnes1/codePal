@@ -4,7 +4,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Persant from './prashantFooter';
-import Mat from './MatFooter';
+import Mat from './MattFooter';
 import Timothy from './components/TimothyFooter';
 import ShoppingCart from './components/shoppingcart';
 import LoginForm from './components/logInform';
