@@ -12,6 +12,7 @@
 
 .cp-dashboard-alert {
     text-align: center;
+
     margin: 5px;
     background-color: darkslategray;
     opacity: .5;
@@ -82,6 +83,7 @@
     background-position: center;
     background-size: cover;
     padding: 20px;
+
     margin-bottom: 25px
 }
 

@@ -80,6 +80,7 @@ function ViewCodePal() {
         <div className="">{codePalName} Viewing Area</div>
 
         <div className="text-center cp-dashboard-alert">
+
           <HealthStats stats={emotional} />
           <HealthStats stats={physical} />
         </div>
@@ -117,6 +118,7 @@ function ViewCodePal() {
 
           <div className="cp-viewing-area-center">
             <div className="cp-viewing-area-codePal">
+
               <animated.div style={props} onClick={handleClickInViewingArea}>
                 <div className="cp-codePal"> </div>
               </animated.div>

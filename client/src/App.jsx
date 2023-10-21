@@ -4,6 +4,7 @@ import ViewComponent from "./components/ViewComponent";
 import Footer from "./components/Footer";
 import "./app.css";
 import "./components/viewComponent.css";
+
 import LandingComponent from "./components/LandingComponent";
 
 export default function App() {
