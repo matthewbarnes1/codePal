@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 // import { animated } from "@react-spring/web";
 import { useSpring, animated } from "@react-spring/web";
+import FluidFill from "../UI/FluidFill";
+import FluidItemsPopUp from "../UI/FluidItemsPopUp";
+import HealthStats from "../UI/HealthStats";
 
 function ViewCodePal() {
   // Change the default state of temp to 75 degrees.
-  const [emotional, setEmotional] = useState(10);
-  const [physical, setPhysical] = useState(10);
+  const [emotional, setEmotional] = useState(5);
+  const [physical, setPhysical] = useState(5);
   const [position, setPosition] = useState(100);
   const [props, api] = useSpring(
     () => ({
-      from: { x: 0 },
-      to: { x: 100 },
+      x: 0,
+      rotateZ: 0,
     }),
     []
   );
@@ -18,7 +21,7 @@ function ViewCodePal() {
   // const codePalName = props.pet.name;
   const codePalName = "BRUNO";
   // const codePalName = props.pet.avatar;
-  const codePalAvatar = "🐶";
+  // const codePalAvatar = "🐶";
 
   // const currentToy = props.toy;
   // const currentFood = props.food;
@@ -48,42 +51,44 @@ function ViewCodePal() {
   const feedFood = () => {
     // use currentFood.eH for emotional
     // use currentFood.pH for emotional
-    setEmotional(emotional + 2);
-    setPhysical(physical + 1);
+    emotional + 2 > 10 ? 10 : setEmotional(emotional + 2);
+    physical + 1 > 10 ? 10 : setPhysical(physical + 1);
   };
 
   // Handler for playing with
   //TODO pass toy to check toyType
   const playToy = () => {
-    setEmotional(emotional + 1);
-    setPhysical(physical + 2);
+    emotional + 1 > 10 ? 10 : setEmotional(emotional + 2);
+    physical + 2 > 10 ? 10 : setPhysical(physical + 1);
   };
 
-  const handleSpringClick = () => {
+  const handleClickInViewingArea = () => {
+    api.set({
+      rotateZ: 0,
+    });
     api.start({
-      from: {
-        x: 0,
-      },
-      to: {
-        x: 300,
-      },
+      to: [
+        { x: 200, rotateZ: 360 },
+        { x: 0, rotateZ: 360 },
+      ],
     });
   };
 
   return (
     <main>
       <div className="cp-dashboard">
-        <div className="">
-          {codePalName} {codePalAvatar} Viewing Area
-        </div>
+        <div className="">{codePalName} Viewing Area</div>
 
         <div className="text-center cp-dashboard-alert">
-          Comments will go here
+          <HealthStats stats={emotional} />
+          <HealthStats stats={physical} />
         </div>
 
         <div className="cp-viewing-area">
           <div className="cp-viewing-area-left">
             PURCHASE
+            <FluidFill />
+            <FluidItemsPopUp />
             <button
               type="button"
               className="btn btn-primary"
@@ -112,8 +117,8 @@ function ViewCodePal() {
 
           <div className="cp-viewing-area-center">
             <div className="cp-viewing-area-codePal">
-              <animated.div style={props} onClick={handleSpringClick}>
-                {codePalAvatar}
+              <animated.div style={props} onClick={handleClickInViewingArea}>
+                <div className="cp-codePal"> </div>
               </animated.div>
             </div>
             <div className="cp-viewing-area-controls">

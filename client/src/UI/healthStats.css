@@ -1,0 +1,10 @@
+.cp-health-stats-container {
+
+    background-color: beige;
+    width: 300px;
+    border-color: aquamarine;
+    border-radius: 5px;
+    border: solid;
+    border-style: inset;
+    opacity: 1;
+}
