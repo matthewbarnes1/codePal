@@ -7,14 +7,18 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    box-sizing: border-box;
 }
 
 .cp-dashboard-alert {
     text-align: center;
-    margin: 10px;
+    margin: 5px;
     background-color: darkslategray;
-    opacity: .3;
-    padding: 10px;
+    opacity: .5;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
 }
 
 .cp-viewing-area {
@@ -78,6 +82,7 @@
     background-position: center;
     background-size: cover;
     padding: 20px;
+    margin-bottom: 25px
 }
 
 .cp-codePal:hover {

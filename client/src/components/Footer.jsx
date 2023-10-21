@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="pv-footer">
-      <p className="bg-gray-300 p-10 bg-4 text-center text-3xl">
+      <p className="text-center text-3xl">
         kwikFolio is made with &#x2764;&#xFE0F; by PV
       </p>
 
