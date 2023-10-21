@@ -14,6 +14,7 @@ function HealthStats({ stats }) {
       {likes.map((like) => (
         <img key={like.key} src={like.value}></img>
       ))}
+
     </div>
   );
 }

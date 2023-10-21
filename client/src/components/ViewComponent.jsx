@@ -7,13 +7,13 @@ import HealthStats from "../UI/HealthStats";
 
 function ViewCodePal() {
   // Change the default state of temp to 75 degrees.
-  const [emotional, setEmotional] = useState(10);
-  const [physical, setPhysical] = useState(10);
+  const [emotional, setEmotional] = useState(5);
+  const [physical, setPhysical] = useState(5);
   const [position, setPosition] = useState(100);
   const [props, api] = useSpring(
     () => ({
-      from: { x: 0 },
-      to: { x: 10 },
+      x: 0,
+      rotateZ: 0,
     }),
     []
   );
@@ -51,25 +51,26 @@ function ViewCodePal() {
   const feedFood = () => {
     // use currentFood.eH for emotional
     // use currentFood.pH for emotional
-    setEmotional(emotional + 2);
-    setPhysical(physical + 1);
+    emotional + 2 > 10 ? 10 : setEmotional(emotional + 2);
+    physical + 1 > 10 ? 10 : setPhysical(physical + 1);
   };
 
   // Handler for playing with
   //TODO pass toy to check toyType
   const playToy = () => {
-    setEmotional(emotional + 1);
-    setPhysical(physical + 2);
+    emotional + 1 > 10 ? 10 : setEmotional(emotional + 2);
+    physical + 2 > 10 ? 10 : setPhysical(physical + 1);
   };
 
-  const handleSpringClick = () => {
+  const handleClickInViewingArea = () => {
+    api.set({
+      rotateZ: 0,
+    });
     api.start({
-      from: {
-        x: 0,
-      },
-      to: {
-        x: 300,
-      },
+      to: [
+        { x: 200, rotateZ: 360 },
+        { x: 0, rotateZ: 360 },
+      ],
     });
   };
 
@@ -79,7 +80,9 @@ function ViewCodePal() {
         <div className="">{codePalName} Viewing Area</div>
 
         <div className="text-center cp-dashboard-alert">
-          <HealthStats />
+
+          <HealthStats stats={emotional} />
+          <HealthStats stats={physical} />
         </div>
 
         <div className="cp-viewing-area">
@@ -115,7 +118,8 @@ function ViewCodePal() {
 
           <div className="cp-viewing-area-center">
             <div className="cp-viewing-area-codePal">
-              <animated.div style={props} onClick={handleSpringClick}>
+
+              <animated.div style={props} onClick={handleClickInViewingArea}>
                 <div className="cp-codePal"> </div>
               </animated.div>
             </div>
