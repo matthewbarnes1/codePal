@@ -1,9 +1,7 @@
 import { useState } from "react";
 import useMeasure from "react-use-measure";
 import { useSpring, animated } from "@react-spring/web";
-
-
-// import styles from "./styles.module.css";
+import "./fluidFill.css";
 
 export default function FluidFill() {
   const [open, toggle] = useState(false);
