@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 // import { animated } from "@react-spring/web";
 import { useSpring, animated } from "@react-spring/web";
+import FluidFill from "../UI/FluidFill";
+import FluidItemsPopUp from "../UI/FluidItemsPopUp";
+import HealthStats from "../UI/HealthStats";
 
 function ViewCodePal() {
   // Change the default state of temp to 75 degrees.
@@ -10,7 +13,7 @@ function ViewCodePal() {
   const [props, api] = useSpring(
     () => ({
       from: { x: 0 },
-      to: { x: 100 },
+      to: { x: 10 },
     }),
     []
   );
@@ -18,7 +21,7 @@ function ViewCodePal() {
   // const codePalName = props.pet.name;
   const codePalName = "BRUNO";
   // const codePalName = props.pet.avatar;
-  const codePalAvatar = "🐶";
+  // const codePalAvatar = "🐶";
 
   // const currentToy = props.toy;
   // const currentFood = props.food;
@@ -73,17 +76,17 @@ function ViewCodePal() {
   return (
     <main>
       <div className="cp-dashboard">
-        <div className="">
-          {codePalName} {codePalAvatar} Viewing Area
-        </div>
+        <div className="">{codePalName} Viewing Area</div>
 
         <div className="text-center cp-dashboard-alert">
-          Comments will go here
+          <HealthStats />
         </div>
 
         <div className="cp-viewing-area">
           <div className="cp-viewing-area-left">
             PURCHASE
+            <FluidFill />
+            <FluidItemsPopUp />
             <button
               type="button"
               className="btn btn-primary"
@@ -113,7 +116,7 @@ function ViewCodePal() {
           <div className="cp-viewing-area-center">
             <div className="cp-viewing-area-codePal">
               <animated.div style={props} onClick={handleSpringClick}>
-                {codePalAvatar}
+                <div className="cp-codePal"> </div>
               </animated.div>
             </div>
             <div className="cp-viewing-area-controls">
