@@ -1,9 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
+    "seed": "node seeds/index.js",
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
@@ -14,9 +14,12 @@
     "bcrypt": "^4.0.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^7.0.2"
+    "mongoose": "^7.0.2",
+    "@apollo/server": "^4.7.1",
+    "graphql": "^16.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
-  }
+  },
+  "description": ""
 }
