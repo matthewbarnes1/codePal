@@ -14,7 +14,7 @@ export default function App() {
     document.title = "codePals";
   }, []);
 
-  if (!user) {
+  if (user) {
     return (
       <>
         <div>In Landing</div>
