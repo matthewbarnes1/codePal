@@ -1,3 +1,10 @@
+:root {
+  --light-pink: #F27273B7;
+  --medium-pink: #e66465e1;
+  --dark-pink: #9198e5e1;
+
+}
+
 main body html {
   text-align: center;
   width: 100vh;

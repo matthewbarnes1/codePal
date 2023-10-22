@@ -4,7 +4,9 @@ import { useSpring, animated } from "@react-spring/web";
 import FluidFill from "../UI/FluidFill";
 import FluidItemsPopUp from "../UI/FluidItemsPopUp";
 import HealthStats from "../UI/HealthStats";
-
+import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import "./viewComponent.css";
 function ViewCodePal() {
   // Change the default state of temp to 75 degrees.
   const [emotional, setEmotional] = useState(5);
@@ -62,7 +64,37 @@ function ViewCodePal() {
     physical + 2 > 10 ? 10 : setPhysical(physical + 1);
   };
 
-  const handleClickInViewingArea = () => {
+  const handleClickRollOver = (e) => {
+    e.stopPropagation();
+    api.set({
+      rotateZ: 0,
+    });
+    api.start({
+      to: [
+        { x: 200, rotateZ: 360 },
+        { x: 0, rotateZ: 360 },
+      ],
+    });
+  };
+
+  const handleClickFetch = (e) => {
+    e.stopPropagation();
+
+    console.log(e.target);
+    api.set({
+      rotateZ: 0,
+    });
+    api.start({
+      to: [
+        { x: -100, rotateZ: 360 },
+        { x: 0, rotateZ: 360 },
+      ],
+    });
+  };
+
+  const handleClickGoWalk = (e) => {
+    e.stopPropagation();
+
     api.set({
       rotateZ: 0,
     });
@@ -80,7 +112,6 @@ function ViewCodePal() {
         <div className="">{codePalName} Viewing Area</div>
 
         <div className="text-center cp-dashboard-alert">
-
           <HealthStats stats={emotional} />
           <HealthStats stats={physical} />
         </div>
@@ -88,70 +119,15 @@ function ViewCodePal() {
         <div className="cp-viewing-area">
           <div className="cp-viewing-area-left">
             PURCHASE
-            <FluidFill />
-            <FluidItemsPopUp />
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={moveLeft}
-            >
-              Left
-            </button>{" "}
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={moveRight}
-            >
-              Right
-            </button>{" "}
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={feedFood}
-            >
-              Food
-            </button>{" "}
-            <button type="button" className="btn btn-primary" onClick={playToy}>
-              Play
-            </button>{" "}
+            {/* <FluidFill /> */}
+            {/* <FluidItemsPopUp /> */}
           </div>
 
           <div className="cp-viewing-area-center">
             <div className="cp-viewing-area-codePal">
-
-              <animated.div style={props} onClick={handleClickInViewingArea}>
+              <animated.div style={props} onClick={handleClickRollOver}>
                 <div className="cp-codePal"> </div>
               </animated.div>
-            </div>
-            <div className="cp-viewing-area-controls">
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={moveLeft}
-              >
-                Left
-              </button>{" "}
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={moveRight}
-              >
-                Right
-              </button>{" "}
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={feedFood}
-              >
-                Food
-              </button>{" "}
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={playToy}
-              >
-                Play
-              </button>{" "}
             </div>
           </div>
           <div className="cp-viewing-area-right">
