@@ -3,29 +3,32 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-image: url("../assets/living-room-door.jpeg");
+    background-image: url("../assets/scene/indoor03.jpeg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 100 100;
     background-size: cover;
     box-sizing: border-box;
 
 }
 
-/* .cp-dashboard-image-overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-} */
+.cp-dashboard-title {
+    text-align: center;
+    padding: 10px;
+    font-family: "Emilys Candy";
+    font-size: xx-large;
+    color: var(--medium-pink);
+    text-shadow: var(--dark-pink) 1px 0 10px;
+}
 
 .cp-dashboard-alert {
     text-align: center;
 
-    margin: 5px;
+    margin: 5px 10px;
     background: linear-gradient(var(--light-pink), var(--medium-pink));
     padding: 5px;
     display: flex;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .cp-viewing-area {
@@ -36,14 +39,31 @@
 
 .cp-viewing-area-left,
 .cp-viewing-area-right {
-    width: 20vw;
+    width: 80px;
+    height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border-radius: 20px;
-    background: linear-gradient(var(--medium-pink), var(--dark-pink));
+    /* padding: 1px; */
+    margin: 15px;
+    border: none;
+    /* border-radius: 10px; */
+    /* background: linear-gradient(var(--medium-pink), var(--dark-pink)); */
+    cursor: pointer;
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    background-color: none; */
+}
+
+.cp-viewing-area-left {
+    /* background-image: url("../assets/toys/toy_ball.png"); */
+}
+
+.cp-viewing-area-right {
+    /* background-image: url("../assets/toys/food.png"); */
 }
 
 .cp-viewing-area-center {
@@ -78,18 +98,16 @@
     position: relative;
     width: 100px;
     height: 100px;
-    /* box-shadow: #2a9d8f; */
     transition: box-shadow 0.5s, opacity 0.5s;
     will-change: transform;
-    cursor: grab;
+    cursor: pointer;
     overflow: hidden;
     touch-action: none;
-    background-image: url("../assets/dog.png");
+    background-image: url("../assets/dogs/show greeting/IMG_6964.GIF");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     padding: 20px;
-
     margin-bottom: 25px
 }
 
@@ -97,4 +115,9 @@
     /* box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4); */
     padding: 35px;
 
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
 }

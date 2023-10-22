@@ -1,5 +1,5 @@
-import like from "../assets/like.svg";
-import unlike from "../assets/unlike.svg";
+import like from "../assets/icons/like.svg";
+import unlike from "../assets/icons/unlike.svg";
 
 import "./healthStats.css";
 
@@ -9,12 +9,18 @@ function HealthStats({ stats }) {
   for (let i = 0; i < stats; i++) {
     likes.push({ key: i, value: like });
   }
+  let unlikes = [{}];
+  for (let i = 0; i < 10 - stats; i++) {
+    unlikes.push({ key: i, value: unlike });
+  }
   return (
     <div className="cp-health-stats-container">
       {likes.map((like) => (
         <img key={like.key} src={like.value}></img>
       ))}
-
+      {unlikes.map((unlike) => (
+        <img key={unlike.key} src={unlike.value}></img>
+      ))}
     </div>
   );
 }

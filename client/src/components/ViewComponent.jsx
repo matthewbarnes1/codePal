@@ -1,141 +1,67 @@
-import { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // import { animated } from "@react-spring/web";
 import { useSpring, animated } from "@react-spring/web";
-import FluidFill from "../UI/FluidFill";
-import FluidItemsPopUp from "../UI/FluidItemsPopUp";
+import { AnimatePresence, motion, useDragControls } from "framer-motion";
+
 import HealthStats from "../UI/HealthStats";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 import "./viewComponent.css";
+import MyCodePal from "./CP";
+import foodImg from "../assets/toys/food.png";
+
 function ViewCodePal() {
-  // Change the default state of temp to 75 degrees.
   const [emotional, setEmotional] = useState(5);
   const [physical, setPhysical] = useState(5);
-  const [position, setPosition] = useState(100);
-  const [props, api] = useSpring(
-    () => ({
-      x: 0,
-      rotateZ: 0,
-    }),
-    []
-  );
 
-  // const codePalName = props.pet.name;
-  const codePalName = "BRUNO";
-  // const codePalName = props.pet.avatar;
-  // const codePalAvatar = "🐶";
+  const control = useDragControls();
 
-  // const currentToy = props.toy;
-  // const currentFood = props.food;
-
-  // useEffect for metrics and doc title emoticon
-  useEffect(() => {
-    // render metrics panel
-    // render emoticon for doc title
-  });
-
-  useEffect(() => {
-    // render position
-  }, [position]);
-
-  // Handler for moving left the temp by 1
-  const moveLeft = () => {
-    setPosition(position - 1);
+  const handleDrag = (e) => {
+    control.start(e);
   };
-
-  // Handler for right by 1
-  const moveRight = () => {
-    setPosition(position + 1);
-  };
-
-  // Handler for feeding food/treat
-  // TODO pass food to check foodType
-  const feedFood = () => {
-    // use currentFood.eH for emotional
-    // use currentFood.pH for emotional
-    emotional + 2 > 10 ? 10 : setEmotional(emotional + 2);
-    physical + 1 > 10 ? 10 : setPhysical(physical + 1);
-  };
-
-  // Handler for playing with
-  //TODO pass toy to check toyType
-  const playToy = () => {
-    emotional + 1 > 10 ? 10 : setEmotional(emotional + 2);
-    physical + 2 > 10 ? 10 : setPhysical(physical + 1);
-  };
-
-  const handleClickRollOver = (e) => {
-    e.stopPropagation();
-    api.set({
-      rotateZ: 0,
-    });
-    api.start({
-      to: [
-        { x: 200, rotateZ: 360 },
-        { x: 0, rotateZ: 360 },
-      ],
-    });
-  };
-
-  const handleClickFetch = (e) => {
-    e.stopPropagation();
-
-    console.log(e.target);
-    api.set({
-      rotateZ: 0,
-    });
-    api.start({
-      to: [
-        { x: -100, rotateZ: 360 },
-        { x: 0, rotateZ: 360 },
-      ],
-    });
-  };
-
-  const handleClickGoWalk = (e) => {
-    e.stopPropagation();
-
-    api.set({
-      rotateZ: 0,
-    });
-    api.start({
-      to: [
-        { x: 200, rotateZ: 360 },
-        { x: 0, rotateZ: 360 },
-      ],
-    });
+  const handleClick = function (e) {
+    alert(e.target);
   };
 
   return (
     <main>
       <div className="cp-dashboard">
-        <div className="">{codePalName} Viewing Area</div>
+        <div className="cp-dashboard-title">{"BRUNO"} </div>
 
         <div className="text-center cp-dashboard-alert">
           <HealthStats stats={emotional} />
           <HealthStats stats={physical} />
         </div>
 
-        <div className="cp-viewing-area">
-          <div className="cp-viewing-area-left">
-            PURCHASE
-            {/* <FluidFill /> */}
-            {/* <FluidItemsPopUp /> */}
-          </div>
-
+        <div className="cp-viewing-area" onPointerDown={handleDrag}>
+          <motion.img
+            className="cp-viewing-area-left"
+            // whileHover={{ scale: 1.1 }}
+            // whileTap={{ scale: 0.8 }}
+            // onClick={null}
+            whileDrag={{ scale: 2.2 }}
+            drag={true}
+            dragControls={control}
+            dragElastic={1}
+            dragConstraints={{ top: 450, left: 0, right: 500, bottom: 600 }}
+            dragMomentum={true}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
+            src={foodImg}
+          />
           <div className="cp-viewing-area-center">
             <div className="cp-viewing-area-codePal">
-              <animated.div style={props} onClick={handleClickRollOver}>
-                <div className="cp-codePal"> </div>
-              </animated.div>
+              <MyCodePal />
+
+              {/* <div className="cp-codePal"> </div> */}
+              {/* </animated.div> */}
             </div>
           </div>
-          <div className="cp-viewing-area-right">
-            <h3>METRICS PANEL</h3>
-            <p className="">Current Emotional Health: {emotional} happiness</p>
-            <p className="">Current Physical Health: {physical} strength</p>
-            <p className="">Current Position: {position} x-direction</p>
-          </div>
+          <motion.button
+            className="cp-viewing-area-right"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={(e) => handleClick(e)}
+          >
+            {" "}
+          </motion.button>
         </div>
       </div>
     </main>

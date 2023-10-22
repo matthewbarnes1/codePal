@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ViewComponent from "./components/ViewComponent";
 import Footer from "./components/Footer";
+import CP from "./components/CP";
 import "./app.css";
 
 import LandingComponent from "./components/LandingComponent";
