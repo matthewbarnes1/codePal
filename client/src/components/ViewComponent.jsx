@@ -45,12 +45,9 @@ function ViewCodePal() {
             <ActionIcons iconSrc={ballImg} />
           </div>
 
-          {/* codePal play area */}
-          <div className="cp-viewing-area-center">
-            <div className="cp-viewing-area-codePal">
-              <MyCodePal />
-            </div>
-          </div>
+          {/* codePal view area for 
+          'go for a walk' mouse click event */}
+          <div className="cp-viewing-area-center"></div>
 
           {/* meters and stats display area */}
           <div className="cp-viewing-area-right">
@@ -58,6 +55,11 @@ function ViewCodePal() {
             <FluidPanel stat={physical} srcIcon={pHImg} />
             {/* <FluidPanel stat={-1} srcIcon={ageImg} txt={age} /> */}
           </div>
+        </div>
+
+        {/* codePal area */}
+        <div className="cp-dashboard-footer">
+          <MyCodePal />
         </div>
       </div>
     </main>

@@ -72,14 +72,13 @@
 
 }
 
-.cp-viewing-area-codePal {
+.cp-dashboard-footer {
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
+    flex: 1 1 100%;
     justify-content: center;
-    align-items: end;
-    position: sticky;
-    bottom: 0;
-    min-height: 100%;
+    align-items: center;
+
 }
 
 body {

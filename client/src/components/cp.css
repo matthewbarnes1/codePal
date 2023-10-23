@@ -1,6 +1,6 @@
 .cp-codePal {
-    position: absolute;
-    bottom: -10vh;
+    position: relative;
+    bottom: 150px;
     width: 200px;
     height: 200px;
     transition: box-shadow 0.5s, opacity 0.5s;
@@ -12,8 +12,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 20px;
-    margin-bottom: 25px
+    /* padding: 20px;
+    margin-bottom: 25px */
 }
 
 .cp-codePal:hover {
