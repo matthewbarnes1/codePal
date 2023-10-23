@@ -100,7 +100,7 @@ type Query {
   food(id: ID!): Food
   toy(id: ID!): Toy
   pet(id: ID!): Pet
-  user(id: ID!): User
+  user(userId: ID!): User
 }
 
 type Mutation {
