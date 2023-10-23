@@ -20,17 +20,6 @@
     text-shadow: var(--dark-pink) 1px 0 10px;
 }
 
-.cp-dashboard-alert {
-    text-align: center;
-
-    margin: 5px 10px;
-    background: linear-gradient(var(--light-pink), var(--medium-pink));
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
-}
-
 .cp-viewing-area {
     display: flex;
     flex-direction: row;
@@ -96,8 +85,8 @@
 
 .cp-codePal {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     transition: box-shadow 0.5s, opacity 0.5s;
     will-change: transform;
     cursor: pointer;
@@ -113,7 +102,7 @@
 
 .cp-codePal:hover {
     /* box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4); */
-    padding: 35px;
+    padding: 40px;
 
 }
 
