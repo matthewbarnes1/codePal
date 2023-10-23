@@ -1,0 +1,49 @@
+.cp-stats-container {
+    background: linear-gradient(var(--light-dark-pink),
+            var(--light-medium-pink),
+            var(--light-light-pink),
+            var(--light-light-pink),
+            var(--light-medium-pink));
+    border-radius: 8px;
+    border: solid;
+    border-style: inset;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-flow: row-reverse nowrap;
+}
+
+.cp-stats-meter {
+    height: 20px;
+    /* padding: 1px; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.cp-stats-meter img {
+    border-radius: 8px;
+    height: 15px;
+    /* padding: 1px; */
+}
+
+.cp-stats-icon {
+    border-radius: 100px;
+    border: solid;
+    border-style: inset;
+    padding: 3px;
+    margin: 5px;
+    /* margin: 8px 20px; */
+    /* max-width: 30px; */
+
+}
+
+.cp-stats-icon img {
+    /* border-radius: 100px; */
+    /* border: solid; */
+    /* border-style: inset; */
+    /* margin: 8px 20px; */
+    max-width: 30px;
+
+}
