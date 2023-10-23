@@ -11,7 +11,7 @@ function StatOMeter(props) {
   }
   let unlikes = [{}];
   for (let i = 0; i < 10 - props.stats; i++) {
-    unlikes.push({ key: i, value: unlike });
+    unlikes.push({ key: 10 - i, value: unlike });
   }
   return (
     <div className="cp-stats-container">

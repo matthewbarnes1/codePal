@@ -8,17 +8,18 @@
     border: solid;
     border-style: inset;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
-    flex-flow: row-reverse nowrap;
+    flex-flow: row nowrap;
 }
 
 .cp-stats-meter {
     height: 20px;
     /* padding: 1px; */
     display: flex;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
+    flex-flow: row-reverse nowrap;
 
 }
 
@@ -32,11 +33,17 @@
     border-radius: 100px;
     border: solid;
     border-style: inset;
-    padding: 3px;
+    padding: 2px;
     margin: 5px;
-    /* margin: 8px 20px; */
-    /* max-width: 30px; */
+}
 
+/* below is what styling should be for collapsed version of above meter */
+.cp-stats-icon-collapsed {
+    border-radius: 100px;
+    border: solid;
+    border-style: inset;
+    padding: 2px;
+    margin: 5px;
 }
 
 .cp-stats-icon img {
@@ -44,6 +51,6 @@
     /* border: solid; */
     /* border-style: inset; */
     /* margin: 8px 20px; */
-    max-width: 30px;
+    max-width: 50px;
 
 }

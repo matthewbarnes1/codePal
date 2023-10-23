@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 // get styling
 import "./viewComponent.css";
 // get codePal pet
@@ -53,7 +54,7 @@ function ViewCodePal() {
           <div className="cp-viewing-area-right">
             <FluidPanel stat={emotional} srcIcon={eHImg} />
             <FluidPanel stat={physical} srcIcon={pHImg} />
-            {/* <FluidPanel stat={-1} srcIcon={ageImg} txt={age} /> */}
+            <FluidPanel stat={-1} srcIcon={ageImg} txt={age} />
           </div>
         </div>
 

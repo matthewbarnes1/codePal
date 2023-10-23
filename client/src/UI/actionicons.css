@@ -5,9 +5,10 @@
     flex-flow: column nowrap;
     justify-content: start;
     align-items: start;
-    /* padding: 1px; */
-    margin: 5px;
-    border: none;
+    padding: 2px;
+    margin: 10px;
+    border: inset;
+    border-radius: 100px;
     /* border-radius: 10px; */
     /* background: linear-gradient(var(--medium-pink), var(--dark-pink)); */
     cursor: pointer;

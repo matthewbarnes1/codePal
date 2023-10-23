@@ -10,7 +10,7 @@ function FluidPanel(props) {
         <StatOMeter stats={props.stat} srcIcon={props.srcIcon} />
       ) : (
         <StatOMeter
-          stats={props.stat}
+          // stats={props.stat}
           srcIcon={props.srcIcon}
           txt={props.txt}
         />

@@ -51,7 +51,7 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
-    align-items: start;
+    align-items: end;
     /* padding: 1px; */
     margin: 15px;
     border: none;
