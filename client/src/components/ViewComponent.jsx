@@ -28,7 +28,8 @@ function ViewCodePal() {
   const [age, setAge] = useState(12);
 
   const handleDrag = (e) => {
-    control.start(e);
+    // control.start(e);
+    console.log("viewing area clicked just now");
   };
 
   return (
