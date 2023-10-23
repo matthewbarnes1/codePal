@@ -17,6 +17,9 @@ const resolvers = {
       users: async () => {
         return User.find();
       },
+      user: async (parent, { userId }) => {
+      return User.findById(userId);
+    },
     },
 
     Mutation: {
