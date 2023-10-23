@@ -23,11 +23,19 @@ function StatOMeter(props) {
           <img key={unlike.key} src={unlike.value}></img>
         ))}
       </div>
-      {props.srcIcon ? (
-        <div className="cp-stats-icon">
-          <img src={props.srcIcon} />
+      {/* {props.txt ? (
+        <div className="cp-stats-meter">
+          <div>{props.txt}</div>
+
+          <div className="cp-stats-icon">
+            <img src={props.srcIcon} />
+          </div>
         </div>
-      ) : null}
+      ) : ( */}
+      <div className="cp-stats-icon">
+        <img src={props.srcIcon} />
+      </div>
+      {/* )} */}
     </div>
   );
 }

@@ -8,7 +8,13 @@ function FluidPanel(props) {
     <div className="cp-fluid-panel">
       {props.stat + 1 ? (
         <StatOMeter stats={props.stat} srcIcon={props.srcIcon} />
-      ) : null}
+      ) : (
+        <StatOMeter
+          stats={props.stat}
+          srcIcon={props.srcIcon}
+          txt={props.txt}
+        />
+      )}
     </div>
   );
 }

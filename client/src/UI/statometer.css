@@ -7,11 +7,9 @@
     border-radius: 8px;
     border: solid;
     border-style: inset;
-    /* margin: 8px 20px; */
     display: flex;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
-    /* flex: 0 0 00px; */
     flex-flow: row-reverse nowrap;
 }
 

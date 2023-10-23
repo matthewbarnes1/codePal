@@ -9,6 +9,7 @@ import ballImg from "../assets/toys/toy_ball.png";
 import boneImg from "../assets/toys/toy_bone.png";
 import eHImg from "../assets/icons/dog_eH.png";
 import pHImg from "../assets/icons/dog_pH.png";
+import ageImg from "../assets/icons/age.png";
 
 // get all the UI elements needed
 import ActionIcons from "../UI/ActionIcons";
@@ -22,6 +23,8 @@ function ViewCodePal() {
   const [emotional, setEmotional] = useState(8);
   // pet.pH below
   const [physical, setPhysical] = useState(5);
+  // age below
+  const [age, setAge] = useState(12);
 
   const handleDrag = (e) => {
     control.start(e);
@@ -57,6 +60,7 @@ function ViewCodePal() {
           <div className="cp-viewing-area-right">
             <FluidPanel stat={emotional} srcIcon={eHImg} />
             <FluidPanel stat={physical} srcIcon={pHImg} />
+            {/* <FluidPanel stat={-1} srcIcon={ageImg} txt={age} /> */}
           </div>
         </div>
       </div>
