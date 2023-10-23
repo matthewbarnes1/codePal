@@ -3,6 +3,7 @@ import StatOMeter from "./StatOMeter";
 import "./fluidPanel.css";
 
 function FluidPanel(props) {
+  console.log(props);
   return (
     <div className="cp-fluid-panel">
       {props.stat + 1 ? (

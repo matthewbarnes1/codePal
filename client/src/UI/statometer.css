@@ -7,25 +7,45 @@
     border-radius: 8px;
     border: solid;
     border-style: inset;
-    margin: 8px 20px;
-    display: flex;
-    justify-content: center;
-    flex: 0 0 250px;
-}
-
-.cp-stats-container img {
-    border-radius: 8px;
-    height: 20px;
-    padding: 1px
-}
-
-.cp-stats-panel {
-
-    margin: 5px 10px;
-    background: linear-gradient(var(--light-pink), var(--medium-pink));
-    padding: 5px;
+    /* margin: 8px 20px; */
     display: flex;
     justify-content: end;
-    border-radius: 15px;
+    align-items: center;
+    /* flex: 0 0 00px; */
+    flex-flow: row-reverse nowrap;
+}
+
+.cp-stats-meter {
+    height: 20px;
+    /* padding: 1px; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.cp-stats-meter img {
+    border-radius: 8px;
+    height: 15px;
+    /* padding: 1px; */
+}
+
+.cp-stats-icon {
+    border-radius: 100px;
+    border: solid;
+    border-style: inset;
+    padding: 3px;
+    margin: 5px;
+    /* margin: 8px 20px; */
+    /* max-width: 30px; */
+
+}
+
+.cp-stats-icon img {
+    /* border-radius: 100px; */
+    /* border: solid; */
+    /* border-style: inset; */
+    /* margin: 8px 20px; */
+    max-width: 30px;
 
 }
