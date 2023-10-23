@@ -1,0 +1,22 @@
+.cp-codePal {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transition: box-shadow 0.5s, opacity 0.5s;
+    will-change: transform;
+    cursor: pointer;
+    overflow: hidden;
+    touch-action: none;
+    background-image: url("../assets/dogs/show greeting/IMG_6964.GIF");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    margin-bottom: 25px
+}
+
+.cp-codePal:hover {
+    /* box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4); */
+    padding: 40px;
+
+}

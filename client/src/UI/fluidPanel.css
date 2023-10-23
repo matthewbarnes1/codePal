@@ -1,0 +1,13 @@
+.cp-fluid-panel {
+    margin: 5px 10px;
+    background: linear-gradient(var(--light-pink), var(--medium-pink));
+    padding: 5px;
+
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start; */
+    /* flex: 0 0 0; */
+
+    border-radius: 8px;
+}

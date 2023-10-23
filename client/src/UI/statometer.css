@@ -1,0 +1,31 @@
+.cp-stats-container {
+    background: linear-gradient(var(--light-dark-pink),
+            var(--light-medium-pink),
+            var(--light-light-pink),
+            var(--light-light-pink),
+            var(--light-medium-pink));
+    border-radius: 8px;
+    border: solid;
+    border-style: inset;
+    margin: 8px 20px;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 250px;
+}
+
+.cp-stats-container img {
+    border-radius: 8px;
+    height: 20px;
+    padding: 1px
+}
+
+.cp-stats-panel {
+
+    margin: 5px 10px;
+    background: linear-gradient(var(--light-pink), var(--medium-pink));
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+    border-radius: 15px;
+
+}
