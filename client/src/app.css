@@ -2,7 +2,9 @@
   --light-pink: #F27273B7;
   --medium-pink: #e66465e1;
   --dark-pink: #9198e5e1;
-
+  --light-dark-pink: #cdb4db;
+  --light-medium-pink: #ffc8dd;
+  --light-light-pink: #ffcfd2;
 }
 
 main body html {
