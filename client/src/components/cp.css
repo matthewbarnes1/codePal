@@ -1,5 +1,6 @@
 .cp-codePal {
-    position: relative;
+    position: absolute;
+    top: 400px;
     width: 200px;
     height: 200px;
     transition: box-shadow 0.5s, opacity 0.5s;
