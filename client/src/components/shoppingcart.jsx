@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Shoppingcart.css'; 
 
 function ShoppingCart() {
   const [isCartOpen, setCartOpen] = useState(false);
