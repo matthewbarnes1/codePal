@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import ViewComponent from "./components/ViewComponent";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 import "./app.css";
 
@@ -28,6 +29,7 @@ export default function App() {
 
         {/* when logged in, show the ViewComponent */}
 
+        {/* <Header /> */}
         <ViewComponent />
         <Footer />
       </>

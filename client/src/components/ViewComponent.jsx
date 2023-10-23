@@ -30,10 +30,6 @@ function ViewCodePal() {
     control.start(e);
   };
 
-  const handleClick = function (e) {
-    alert(e.target);
-  };
-
   return (
     <main>
       <div className="cp-dashboard">
