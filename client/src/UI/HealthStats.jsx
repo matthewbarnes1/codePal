@@ -2,6 +2,7 @@ import like from "../assets/icons/like.svg";
 import unlike from "../assets/icons/unlike.svg";
 
 import "./healthStats.css";
+import "./fluidPanel.css";
 
 function HealthStats({ stats }) {
   console.log(stats);
