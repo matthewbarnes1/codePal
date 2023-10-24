@@ -1,13 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from "react-router-dom";
+import "./header.css";
 
 function Header() {
   return (
-    <header>
-      <nav className="navbar">
-      
-      
-        <ul className="nav-links">
+    <header className="cp-header-main">
+      <nav>
+        <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -15,14 +13,8 @@ function Header() {
             <Link to="/login">LoginForm</Link>
           </li>
           <li>
-            <Link to="/services">store</Link>
+            <Link to="/signup">Signup</Link>
           </li>
-          <li>
-            <Link to="/contact">footer</Link>
-          </li>
-       {/* // heres where i would put in the links to are github ? */}
-       
-       
         </ul>
       </nav>
     </header>
