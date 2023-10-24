@@ -31,8 +31,9 @@ function ViewCodePal() {
 
   useEffect(() => {}, [moveCPToX]);
 
-  const handleClickDoorway = (e) => {
+  const handleClickDoorway = (event) => {
     // control.start(e);
+    console.log(event);
     console.log("(cp) Doorway area clicked...");
   };
 
