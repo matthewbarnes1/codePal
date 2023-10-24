@@ -16,6 +16,12 @@ function ActionIcons(props) {
     right: 1200,
   };
 
+  const transitionValues = {
+    duration: 0.8,
+    yoyo: Infinity,
+    ease: "easeOut",
+  };
+
   useEffect(() => {
     console.log("effect triggered...");
   }, [iconInPlay]);

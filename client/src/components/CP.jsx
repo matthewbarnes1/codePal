@@ -1,7 +1,7 @@
 // import { useSpring, animated } from "@react-spring/web";
 import { useRef, useState } from "react";
+import { useSpring, animated } from "@react-spring/web";
 import {
-  useSpring,
   useTime,
   motion,
   useMotionValue,
@@ -11,6 +11,8 @@ import {
 import "./cp.css";
 
 export default function CodePal(props) {
+  console.log("(cp) cp requested to move to ", props.moveToX);
+
   const myCP = useRef();
   const myCPMotion = useMotionValue(0);
   const [move, setMove] = useState(false);
@@ -34,7 +36,7 @@ export default function CodePal(props) {
       className="cp-codePal"
       ref={myCP}
       animate={{
-        x: xPosition,
+        x: 100,
       }}
     />
   );

@@ -4,7 +4,6 @@ import unlike from "../assets/icons/unlike.svg";
 import "./statOMeter.css";
 
 function StatOMeter(props) {
-  console.log(props.srcIcon);
   let likes = [{}];
   for (let i = 0; i < props.stats; i++) {
     likes.push({ key: i, value: like });

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // get styling
 import "./viewComponent.css";
@@ -29,19 +29,22 @@ function ViewCodePal() {
   // up-to-date stopped position of the codePal
   const [moveCPToX, setMoveCPToX] = useState(0);
 
+  useEffect(() => {}, [moveCPToX]);
+
   const handleClickDoorway = (e) => {
     // control.start(e);
     console.log("(cp) Doorway area clicked...");
   };
 
   const tellVCIconMoved = (data) => {
-    console.log("(cp) vc was told that Action Icon has moved...", data);
+    console.log("(cp) vc was told that Action Icon has moved...", data.point.x);
+    setMoveCPToX(data.point.x);
     return true;
   };
   // function that is passed by vc to cp so cp can call
   // when it moves to let vc know that cp has moved
   const tellVCCPMoved = (data) => {
-    console.log("(cp) vc was told that cp has moved...", data);
+    console.log("(cp) vc was told that cp has moved...", data.point.x);
   };
 
   return (
