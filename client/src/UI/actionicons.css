@@ -1,13 +1,35 @@
-.cp-action-icons {
+.cp-action-icons-at-rest {
     width: 80px;
     height: 80px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
     align-items: start;
-    /* padding: 1px; */
-    margin: 5px;
+    padding: 2px;
+    margin: 10px;
+    border: inset;
+    border-radius: 100px;
+    /* border-radius: 10px; */
+    /* background: linear-gradient(var(--medium-pink), var(--dark-pink)); */
+    cursor: pointer;
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    background-color: none; */
+}
+
+.cp-action-icons-in-play {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+    padding: 2px;
+    margin: 10px;
     border: none;
+    border-radius: 100px;
     /* border-radius: 10px; */
     /* background: linear-gradient(var(--medium-pink), var(--dark-pink)); */
     cursor: pointer;

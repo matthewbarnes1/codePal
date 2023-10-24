@@ -8,35 +8,49 @@
     border: solid;
     border-style: inset;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
-    flex-flow: row-reverse nowrap;
+    flex-flow: row nowrap;
 }
 
 .cp-stats-meter {
     height: 20px;
     /* padding: 1px; */
     display: flex;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
+    flex-flow: row-reverse nowrap;
 
 }
 
 .cp-stats-meter img {
-    border-radius: 8px;
+    /* border-radius: 0px; */
     height: 15px;
     /* padding: 1px; */
+}
+
+.cp-stats-info-text {
+    color: var(--info-panel);
+    font-family: "bangers";
+    font-size: x-large;
+    padding: 0 15px;
 }
 
 .cp-stats-icon {
     border-radius: 100px;
     border: solid;
     border-style: inset;
-    padding: 3px;
+    padding: 2px;
     margin: 5px;
-    /* margin: 8px 20px; */
-    /* max-width: 30px; */
+}
 
+/* below is what styling should be for collapsed version of above meter */
+.cp-stats-icon-collapsed {
+    border-radius: 100px;
+    border: solid;
+    border-style: inset;
+    padding: 2px;
+    margin: 5px;
 }
 
 .cp-stats-icon img {
@@ -44,6 +58,6 @@
     /* border: solid; */
     /* border-style: inset; */
     /* margin: 8px 20px; */
-    max-width: 30px;
+    max-width: 50px;
 
 }

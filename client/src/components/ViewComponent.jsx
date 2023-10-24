@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 // get styling
 import "./viewComponent.css";
 // get codePal pet
@@ -24,10 +25,26 @@ function ViewCodePal() {
   // pet.pH below
   const [physical, setPhysical] = useState(5);
   // age below
-  const [age, setAge] = useState(12);
+  const [age, setAge] = useState(2);
+  // up-to-date stopped position of the codePal
+  const [moveCPToX, setMoveCPToX] = useState(0);
 
-  const handleDrag = (e) => {
-    control.start(e);
+  useEffect(() => {}, [moveCPToX]);
+
+  const handleClickDoorway = (e) => {
+    // control.start(e);
+    console.log("(cp) Doorway area clicked...");
+  };
+
+  const tellVCIconMoved = (data) => {
+    console.log("(cp) vc was told that Action Icon has moved...", data.point.x);
+    setMoveCPToX(data.point.x);
+    return true;
+  };
+  // function that is passed by vc to cp so cp can call
+  // when it moves to let vc know that cp has moved
+  const tellVCCPMoved = (data) => {
+    console.log("(cp) vc was told that cp has moved...", data.point.x);
   };
 
   return (
@@ -37,27 +54,33 @@ function ViewCodePal() {
         <div className="cp-dashboard-title">{"BRUNO"} </div>
 
         {/* game play area */}
-        <div className="cp-viewing-area" onPointerDown={handleDrag}>
+        <div className="cp-viewing-area">
+          {/* <div className="cp-viewing-area" onPointerDown={handleDrag}> */}
           {/* action icons area */}
           <div className="cp-fluid-panel">
-            <ActionIcons iconSrc={foodImg} />
-            <ActionIcons iconSrc={boneImg} />
-            <ActionIcons iconSrc={ballImg} />
+            <ActionIcons func={tellVCIconMoved} iconSrc={foodImg} />
+            <ActionIcons func={tellVCIconMoved} iconSrc={boneImg} />
+            <ActionIcons func={tellVCIconMoved} iconSrc={ballImg} />
           </div>
 
-          {/* codePal play area */}
-          <div className="cp-viewing-area-center">
-            <div className="cp-viewing-area-codePal">
-              <MyCodePal />
-            </div>
-          </div>
+          {/* codePal view area for 
+          'go for a walk' mouse click event */}
+          <div
+            onClick={handleClickDoorway}
+            className="cp-viewing-area-center"
+          ></div>
 
           {/* meters and stats display area */}
           <div className="cp-viewing-area-right">
             <FluidPanel stat={emotional} srcIcon={eHImg} />
             <FluidPanel stat={physical} srcIcon={pHImg} />
-            {/* <FluidPanel stat={-1} srcIcon={ageImg} txt={age} /> */}
+            <FluidPanel stat={-1} srcIcon={ageImg} txt={age} />
           </div>
+        </div>
+
+        {/* codePal area */}
+        <div className="cp-dashboard-footer">
+          <MyCodePal moveToX={moveCPToX} func={tellVCCPMoved} />
         </div>
       </div>
     </main>
