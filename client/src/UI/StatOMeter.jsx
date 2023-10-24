@@ -4,20 +4,23 @@ import unlike from "../assets/icons/unlike.svg";
 import "./statOMeter.css";
 
 function StatOMeter(props) {
-  let likes = [{}];
+  let likes = [];
   for (let i = 0; i < props.stats; i++) {
+    //8
     likes.push({ key: i, value: like });
   }
-  let unlikes = [{}];
-  for (let i = 0; i < 10 - props.stats; i++) {
+  let unlikes = [];
+  for (let i = 1; i <= 10 - props.stats; i++) {
     unlikes.push({ key: 20 - i, value: unlike });
   }
+
   return (
     <div className="cp-stats-container">
       <div className="cp-stats-meter">
-        {likes.map((like) => (
-          <img key={like.key} src={like.value}></img>
+        {likes.map((l) => (
+          <img key={l.key} src={l.value}></img>
         ))}
+
         {unlikes.map((unlike) => (
           <img key={unlike.key} src={unlike.value}></img>
         ))}
