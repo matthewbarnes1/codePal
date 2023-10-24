@@ -49,42 +49,40 @@ function ViewCodePal() {
   };
 
   return (
-    <main>
-      <div className="cp-dashboard">
-        {/* pet title display */}
-        <div className="cp-dashboard-title">{"BRUNO"} </div>
+    <div className="cp-dashboard">
+      {/* pet title display */}
+      <div className="cp-dashboard-title">{"BRUNO"} </div>
 
-        {/* game play area */}
-        <div className="cp-viewing-area">
-          {/* <div className="cp-viewing-area" onPointerDown={handleDrag}> */}
-          {/* action icons area */}
-          <div className="cp-fluid-panel">
-            <ActionIcons func={tellVCIconMoved} iconSrc={foodImg} />
-            <ActionIcons func={tellVCIconMoved} iconSrc={boneImg} />
-            <ActionIcons func={tellVCIconMoved} iconSrc={ballImg} />
-          </div>
-
-          {/* codePal view area for 
-          'go for a walk' mouse click event */}
-          <div
-            onClick={handleClickDoorway}
-            className="cp-viewing-area-center"
-          ></div>
-
-          {/* meters and stats display area */}
-          <div className="cp-viewing-area-right">
-            <FluidPanel stat={emotional} srcIcon={eHImg} />
-            <FluidPanel stat={physical} srcIcon={pHImg} />
-            <FluidPanel stat={-1} srcIcon={ageImg} txt={age} />
-          </div>
+      {/* game play area */}
+      <div className="cp-viewing-area">
+        {/* <div className="cp-viewing-area" onPointerDown={handleDrag}> */}
+        {/* action icons area */}
+        <div className="cp-fluid-panel">
+          <ActionIcons func={tellVCIconMoved} iconSrc={foodImg} />
+          <ActionIcons func={tellVCIconMoved} iconSrc={boneImg} />
+          <ActionIcons func={tellVCIconMoved} iconSrc={ballImg} />
         </div>
 
-        {/* codePal area */}
-        <div className="cp-dashboard-footer">
-          <MyCodePal moveToX={moveCPToX} func={tellVCCPMoved} />
+        {/* codePal view area for 
+          'go for a walk' mouse click event */}
+        <div
+          onClick={handleClickDoorway}
+          className="cp-viewing-area-center"
+        ></div>
+
+        {/* meters and stats display area */}
+        <div className="cp-viewing-area-right">
+          <FluidPanel stat={emotional} srcIcon={eHImg} />
+          <FluidPanel stat={physical} srcIcon={pHImg} />
+          <FluidPanel stat={-1} srcIcon={ageImg} txt={age} />
         </div>
       </div>
-    </main>
+
+      {/* codePal area */}
+      <div className="cp-dashboard-footer">
+        <MyCodePal moveToX={moveCPToX} func={tellVCCPMoved} />
+      </div>
+    </div>
   );
 }
 
