@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./actionicons.css";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useTime } from "framer-motion";
 
 function ActionIcons(props) {
   const [iconInPlay, setIconInPlay] = useState(false);
+
+  const actionIcon = useRef();
+
   // draggable within the dragArea
   // console.log(props);
   const dragArea = {
@@ -17,14 +20,28 @@ function ActionIcons(props) {
     console.log("effect triggered...");
   }, [iconInPlay]);
 
+  const handleIconInPlay = (e, info) => {
+    setIconInPlay(true);
+    console.log("icon picked up...", info.point.x);
+
+    // get codePal to follow
+  };
+
+  const handleIconDrop = (e, info) => {
+    console.log("(cp) Action Icon dropped...", info.point.x);
+    props.func(info)
+      ? console.log("(cp) CP moved...")
+      : console.log("(cp) CP could not move...");
+  };
+
   return (
     <>
       <motion.img
+        ref={actionIcon}
         className={
           iconInPlay ? "cp-action-icons-in-play" : "cp-action-icons-at-rest"
         }
         whileHover={{ scale: 1.1 }}
-        // whileTap={{ scale: 0.8 }}
         onClick={null}
         whileDrag={{ scale: 2.2 }}
         drag={true}
@@ -39,8 +56,8 @@ function ActionIcons(props) {
         dragMomentum={true}
         dragTransition={{ bounceStiffness: 60, bounceDamping: 10 }}
         src={props.iconSrc}
-        onDragStart={() => setIconInPlay(true)} // (event, {info.point.x info.point.y}) trigger codepal image change
-        onDragEnd={null} // (event, info) trigger codepal image change
+        onDragStart={handleIconInPlay} // (event, {info.point.x info.point.y}) trigger codepal image change
+        onDragEnd={handleIconDrop} // (event, info) trigger codepal image change
       />
     </>
   );

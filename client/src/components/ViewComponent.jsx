@@ -25,11 +25,23 @@ function ViewCodePal() {
   // pet.pH below
   const [physical, setPhysical] = useState(5);
   // age below
-  const [age, setAge] = useState(12);
+  const [age, setAge] = useState(2);
+  // up-to-date stopped position of the codePal
+  const [moveCPToX, setMoveCPToX] = useState(0);
 
-  const handleDrag = (e) => {
+  const handleClickDoorway = (e) => {
     // control.start(e);
-    console.log("viewing area clicked just now");
+    console.log("(cp) Doorway area clicked...");
+  };
+
+  const tellVCIconMoved = (data) => {
+    console.log("(cp) vc was told that Action Icon has moved...", data);
+    return true;
+  };
+  // function that is passed by vc to cp so cp can call
+  // when it moves to let vc know that cp has moved
+  const tellVCCPMoved = (data) => {
+    console.log("(cp) vc was told that cp has moved...", data);
   };
 
   return (
@@ -39,17 +51,21 @@ function ViewCodePal() {
         <div className="cp-dashboard-title">{"BRUNO"} </div>
 
         {/* game play area */}
-        <div className="cp-viewing-area" onPointerDown={handleDrag}>
+        <div className="cp-viewing-area">
+          {/* <div className="cp-viewing-area" onPointerDown={handleDrag}> */}
           {/* action icons area */}
           <div className="cp-fluid-panel">
-            <ActionIcons iconSrc={foodImg} />
-            <ActionIcons iconSrc={boneImg} />
-            <ActionIcons iconSrc={ballImg} />
+            <ActionIcons func={tellVCIconMoved} iconSrc={foodImg} />
+            <ActionIcons func={tellVCIconMoved} iconSrc={boneImg} />
+            <ActionIcons func={tellVCIconMoved} iconSrc={ballImg} />
           </div>
 
           {/* codePal view area for 
           'go for a walk' mouse click event */}
-          <div className="cp-viewing-area-center"></div>
+          <div
+            onClick={handleClickDoorway}
+            className="cp-viewing-area-center"
+          ></div>
 
           {/* meters and stats display area */}
           <div className="cp-viewing-area-right">
@@ -61,7 +77,7 @@ function ViewCodePal() {
 
         {/* codePal area */}
         <div className="cp-dashboard-footer">
-          <MyCodePal />
+          <MyCodePal moveToX={moveCPToX} func={tellVCCPMoved} />
         </div>
       </div>
     </main>
