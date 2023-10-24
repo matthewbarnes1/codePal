@@ -1,34 +1,34 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type Accessory {
+  type Accessory {
     id: ID!
     accName: String!
     eH: Int!
     pH: Int!
     accAge: Int!
     accFor: String!
-}
+  }
 
-type Food {
+  type Food {
     id: ID!
     foodName: String!
     eH: Int!
     pH: Int!
     foodAge: Int!
     foodFor: String!
-}
+  }
 
-type Toy {
+  type Toy {
     id: ID!
     toyName: String!
     eH: Int!
     pH: Int!
     toyAge: Int!
     toyFor: String!
-}
+  }
 
-type Pet {
+  type Pet {
     id: ID!
     species: String!
     age: Int!
@@ -39,45 +39,49 @@ type Pet {
     petToys: [Toy]
     PetAcc: [Accessory]
     PetFood: [Food]
-}
+  }
 
-type User {
+  type User {
     id: ID!
     email: String!
     name: String!
     username: String!
     password: String!
-    pets: [Pet]
-}
+  }
 
-input AccessoryInput {
+  type Auth {
+    token: String!
+    user: User
+  }
+
+  input AccessoryInput {
     id: ID
     accName: String!
     eH: Int!
     pH: Int!
     accAge: Int!
     accFor: String!
-}
+  }
 
-input FoodInput {
+  input FoodInput {
     id: ID
     foodName: String!
     eH: Int!
     pH: Int!
     foodAge: Int!
     foodFor: String!
-}
+  }
 
-input ToyInput {
+  input ToyInput {
     id: ID
     toyName: String!
     eH: Int!
     pH: Int!
     toyAge: Int!
     toyFor: String!
-}
+  }
 
-input PetInput {
+  input PetInput {
     id: ID
     species: String!
     age: Int!
@@ -88,29 +92,61 @@ input PetInput {
     petToys: [ToyInput]
     PetAcc: [AccessoryInput]
     PetFood: [FoodInput]
-}
+  }
 
-type Query {
-  accessories: [Accessory]
-  foods: [Food]
-  toys: [Toy]
-  pets: [Pet]
-  users: [User]
-  accessory(id: ID!): Accessory
-  food(id: ID!): Food
-  toy(id: ID!): Toy
-  pet(id: ID!): Pet
-  user(userId: ID!): User
-}
+  type Query {
+    accessories: [Accessory]
+    foods: [Food]
+    toys: [Toy]
+    pets: [Pet]
+    users: [User]
+    accessory(id: ID!): Accessory
+    food(id: ID!): Food
+    toy(id: ID!): Toy
+    pet(id: ID!): Pet
+    user(userId: ID!): User
+  }
 
-type Mutation {
-  accessory(accName: String!, eH: Int!, pH: Int!, accAge: Int!, accFor: String!): Accessory
-  food(foodName: String!, eH: Int!, pH: Int!, foodAge: Int!, foodFor: String!): Food
-  toy(toyName: String!, eH: Int!, pH: Int!, toyAge: Int!, toyFor: String!): Toy
-  pet(species: String!, age: Int!, petName: String!, petDesc: String!, pH: Int!, eH: Int!, petToys: [ToyInput], PetAcc: [AccessoryInput], PetFood: [FoodInput]): Pet
-  user(email: String!, name: String!, username: String!, password: String!, pets: [PetInput]): User
-}
-
+  type Mutation {
+    accessory(
+      accName: String!
+      eH: Int!
+      pH: Int!
+      accAge: Int!
+      accFor: String!
+    ): Accessory
+    food(
+      foodName: String!
+      eH: Int!
+      pH: Int!
+      foodAge: Int!
+      foodFor: String!
+    ): Food
+    toy(
+      toyName: String!
+      eH: Int!
+      pH: Int!
+      toyAge: Int!
+      toyFor: String!
+    ): Toy
+    pet(
+      species: String!
+      age: Int!
+      petName: String!
+      petDesc: String!
+      pH: Int!
+      eH: Int!
+      petToys: [ToyInput]
+      PetAcc: [AccessoryInput]
+      PetFood: [FoodInput]
+    ): Pet
+    user(
+      email: String!
+      name: String!
+      username: String!
+      password: String!
+    ): Auth
+  }
 `;
 
 module.exports = typeDefs;

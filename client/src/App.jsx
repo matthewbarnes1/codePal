@@ -55,7 +55,6 @@ export default function App() {
     return (
       <>
         {/* show LandingPAge here and then */}
-
         <ApolloProvider client={client}>
           <SignupForm />
         </ApolloProvider>
