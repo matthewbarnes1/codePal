@@ -5,11 +5,9 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import { Outlet } from "react-router-dom";
+
 import { setContext } from "@apollo/client/link/context";
-import ViewComponent from "./components/ViewComponent";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import SignupForm from "./pages/Signup";
 
 import "./app.css";
 
@@ -32,7 +30,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  // Set up client to execute the `authLink` middleware prior to making the request to our GraphQL API
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
@@ -51,26 +49,13 @@ export default function App() {
     document.title = "codePals";
   }, []);
 
-  if (!user) {
-    return (
-      <>
-        {/* show LandingPAge here and then */}
+  return (
+    <>
+      <main>
         <ApolloProvider client={client}>
-          <SignupForm />
+          <Outlet />
         </ApolloProvider>
-      </>
-    );
-  } else {
-    return (
-      <>
-        {/* else */}
-
-        {/* when logged in, show the ViewComponent */}
-
-        {/* <Header /> */}
-        <ViewComponent />
-        <Footer />
-      </>
-    );
-  }
+      </main>
+    </>
+  );
 }
