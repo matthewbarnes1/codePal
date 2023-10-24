@@ -24,9 +24,16 @@
 }
 
 .cp-stats-meter img {
-    border-radius: 8px;
+    /* border-radius: 0px; */
     height: 15px;
     /* padding: 1px; */
+}
+
+.cp-stats-info-text {
+    color: var(--info-panel);
+    font-family: "bangers";
+    font-size: x-large;
+    padding: 0 15px;
 }
 
 .cp-stats-icon {
