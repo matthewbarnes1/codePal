@@ -2,41 +2,17 @@
     background-color: #BDBDBD;
     width: 100vw;
     font-size: medium;
-    color:black;
+    color: chocolate;
+    font-family: "Bangers";
+    font-size: xx-large;
 }
 
-.cp-header-main ul{
-    list-style-type: none;
-    display:inline-block;
-     color:black;
-}
-
-li a{
-    text-decoration: none;
-    font-size:18px;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-}
-
-li a:hover{
-    color: #656565;
+.cp-header-main li {
+    padding: 10px;
+    color: chocolate;
 
 }
 
-l {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-
-  }
+.cp-header-main li a:hover {
+    color: cornflowerblue;
+}
