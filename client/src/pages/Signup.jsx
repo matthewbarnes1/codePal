@@ -6,6 +6,7 @@ import { create_user } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
+import "./signup.css";
 const Signup = () => {
   console.log("(cp) Signup activated...");
   const [formState, setFormState] = useState({
