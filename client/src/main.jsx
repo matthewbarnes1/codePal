@@ -30,6 +30,10 @@ const router = createBrowserRouter([
         path: "/logout",
         element: <Logout />,
       },
+      {
+        path: "/view",
+        element: <ViewComponent />,
+      },
     ],
   },
 ]);
