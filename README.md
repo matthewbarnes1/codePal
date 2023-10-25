@@ -25,6 +25,12 @@
 Visit CodePal here (add link to deployed site)
 
 
+### Screenshots 
+![tired](https://github.com/matthewbarnes1/codePal/assets/139004105/2d350dc0-3f3b-4132-9df7-ba9dcbadb32f)
+![drink](https://github.com/matthewbarnes1/codePal/assets/139004105/91f95b36-8b3b-4faa-8d85-4516be870981)
+![hi](https://github.com/matthewbarnes1/codePal/assets/139004105/c3942303-be02-482a-adbc-b1cdc6cf7ede)
+
+
 ### Built With
 
 * React, Vite, GraphQL, MongoDB, Mongoose, NPM, Express.js, JWT
