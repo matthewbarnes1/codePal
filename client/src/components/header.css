@@ -1,8 +1,42 @@
 .cp-header-main {
-    /* width: 100vw;
-    height: 10vh;
-    position: absolute; */
-    background-color: var(--footer);
+    background-color: #BDBDBD;
     width: 100vw;
+    font-size: medium;
+    color:black;
+}
+
+.cp-header-main ul{
+    list-style-type: none;
+    display:inline-block;
+     color:black;
+}
+
+li a{
+    text-decoration: none;
+    font-size:18px;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover{
+    color: #656565;
 
 }
+
+l {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+
+  }
