@@ -1,14 +1,12 @@
 .cp-dashboard {
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    height: 80vh;
+    width: 100vw;
     background-image: url("../assets/scene/indoor02.jpeg");
     background-repeat: no-repeat;
-    background-position: 80 80;
+    /* background-position: 0 0; */
     background-size: cover;
     box-sizing: border-box;
-
 }
 
 .cp-dashboard-title {
@@ -83,5 +81,5 @@
 
 body {
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
