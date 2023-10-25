@@ -4,7 +4,6 @@ import App from "./App.jsx";
 import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
-import Logout from "./pages/Logout.jsx";
 import Home from "./pages/Home.jsx";
 import ViewComponent from "./components/ViewComponent.jsx";
 
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
-      },
-      {
-        path: "/logout",
-        element: <Logout />,
       },
       {
         path: "/view",

@@ -4,6 +4,10 @@ import "./header.css";
 import Auth from "../utils/auth";
 
 function Header() {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <header className="cp-header-main">
       <nav>
@@ -19,7 +23,7 @@ function Header() {
                   Hey there,
                   {Auth.getProfile().data.username}!
                 </span>
-                <Link to="/logout">Logout </Link>
+                <div onClick={logout}>Logout </div>
               </>
             ) : (
               <Link to="/login">Login</Link>
