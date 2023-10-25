@@ -1,0 +1,102 @@
+body {
+    background-color: #f2f2f2; 
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.col-12 {
+    flex-basis: 100%;
+}
+
+.col-lg-10 {
+    flex-basis: 80%; 
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
+    margin: 1rem 0;
+    border-radius:3px, 3px, 3px, 3px;
+}
+
+.card-header {
+    background-color: grey;
+    padding: 0.5rem 1rem;
+}
+
+.form-input {
+    align-items: center;
+    width:95%;
+    padding: 0.5rem;
+    margin: 5px;
+    margin-bottom:2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: grey;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.bg-danger {
+    background-color: #ff4d4d;
+}
+
+.my-3 {
+    margin: 1rem 0;
+}
+
+.p-3 {
+    padding: 1rem;
+}
+
+.cp-header-main {
+    background-color: #BDBDBD;
+    width: 100vw;
+    font-size: medium;
+}
+
+.cp-header-main ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li a {
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    color: black;
+    padding: 16px;
+}
+
+li a:hover {
+    color: #656565;
+}
