@@ -10,15 +10,15 @@ const Homepage = () => {
 Fill your void with a fun, playful pet without having to scoop the poop!
 </h2>
 
-      <div className="card">
+      <div className="hCard">
         <img src="./src/assets/mockup/drink.png" alt="Drink mockup" height="300" width="450" />
       </div>
 
-      <div className="card">
+      <div className="hCard">
         <img src="./src/assets/mockup/hi.png" alt="Hi mockup" height="300" width="450" />
       </div>
 
-      <div className="card">
+      <div className="hCard">
         <img src="./src/assets/mockup/tired.png" alt="Tired mockup" height="300" width="450" />
       </div>
 
