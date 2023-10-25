@@ -22,7 +22,7 @@
 
 ***Fill your void with a fun, playful pet without having to scoop the poop!***
 
-Visit CodePal here (add link to deployed site)
+Visit CodePal [here](https://codepal-1eac20565cb5.herokuapp.com/)
 
 
 ### Screenshots 
@@ -40,7 +40,7 @@ Visit CodePal here (add link to deployed site)
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get started, signup for a personal CodePal account here (link to signup page)
+To get started, signup for a personal CodePal account by going to [heroku, here!](https://codepal-1eac20565cb5.herokuapp.com/signup)
 
 
 ### Installation
