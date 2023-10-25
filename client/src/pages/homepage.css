@@ -1,43 +1,46 @@
-.homepage-container{
-    width: 100%;
-    height: 100%;
+.homepage-container {
+    width: 100vw;
+    height: 80vh;
     justify-content: center;
-    text-align:center;
-    display: inline-block;
-}
-
-h1{
-    text-align: center;
-    font-size:x-large;
-    font-family:"Bangers";
-    color:chocolate;
-}
-
-h2{
-    font-family:"Emily's Candy";
-    text-align: center;
-    font-size:19px;
-    color:chocolate;
-}
-
-h3{
-    font-family:"Emily's Candy";
-    text-align: center;
-    font-size:15px;
-    color:chocolate;
-}
-
-.hCard{
     text-align: center;
     display: inline-block;
-    width:25%;
-    margin:25px;
 
 }
 
-.cp-main{
+
+h1 {
+    text-align: center;
+    font-size: x-large;
+    font-family: "Bangers";
+    color: chocolate;
 }
 
-h3 a{
+h2 {
+    font-family: "Emily's Candy";
+    text-align: center;
+    font-size: 19px;
+    color: chocolate;
+    font-family: "Cabin";
+
+}
+
+h3 {
+    font-family: "Emily's Candy";
+    text-align: center;
+    font-size: 15px;
+    color: chocolate;
+    font-family: "Cabin";
+
+}
+
+.hCard {
+    text-align: center;
+    display: inline-block;
+    width: 25%;
+    margin: 25px;
+
+}
+
+h3 a {
     color: black;
 }
