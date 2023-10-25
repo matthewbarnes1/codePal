@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-// import { LOGIN_USER } from '../utils/mutations';
+import { login_user } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  // const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error, data }] = useMutation(login_user);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -24,10 +24,10 @@ const Login = (props) => {
     event.preventDefault();
     console.log(formState);
     try {
-      // const { data } = await login({
-      // variables: { ...formState },
-      // });
-      // Auth.login(data.login.token);
+      const { data } = await login({
+        variables: { ...formState },
+      });
+      Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
@@ -45,7 +45,7 @@ const Login = (props) => {
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
-            {data ? (
+            {!data ? (
               <p>
                 Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>

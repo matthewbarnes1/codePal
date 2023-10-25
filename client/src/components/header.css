@@ -1,5 +1,8 @@
 .cp-header-main {
-    width: 100vw;
+    /* width: 100vw;
     height: 10vh;
-    position: absolute;
+    position: absolute; */
+    background-color: var(--footer);
+    width: 100vw;
+
 }
