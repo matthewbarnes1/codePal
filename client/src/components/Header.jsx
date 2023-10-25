@@ -15,6 +15,13 @@ function Header() {
           <li>
             <Link to="/">Home</Link>
           </li>
+          {!Auth.loggedIn() ? (
+            <li>
+              <Link to="/signup">Signup</Link>
+            </li>
+          ) : (
+            <li></li>
+          )}
           <li>
             {/* if logged in */}
             {Auth.loggedIn() ? (
@@ -28,9 +35,6 @@ function Header() {
             ) : (
               <Link to="/login">Login</Link>
             )}
-          </li>
-          <li>
-            <Link to="/signup">Signup</Link>
           </li>
         </ul>
       </nav>

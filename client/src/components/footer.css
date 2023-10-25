@@ -3,16 +3,18 @@
   width: 100vw;
   font-size: medium;
   text-align: center;
-  position: absolute;
   bottom: 0;
   left: 0;
   padding: 1rem;
   text-align: center;
+  font-family: "Bangers";
+  font-size: xx-large;
+  color: cornflowerblue;
 }
 
 a {
   text-decoration: none;
-  color: #3E4DFF;
+  color: chocolate;
   margin: 5px;
 
 }
