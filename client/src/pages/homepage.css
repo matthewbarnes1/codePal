@@ -1,0 +1,43 @@
+.homepage-container{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    text-align:center;
+    display: inline-block;
+}
+
+h1{
+    text-align: center;
+    font-size:x-large;
+    font-family:"Bangers";
+    color:chocolate;
+}
+
+h2{
+    font-family:"Emily's Candy";
+    text-align: center;
+    font-size:19px;
+    color:chocolate;
+}
+
+h3{
+    font-family:"Emily's Candy";
+    text-align: center;
+    font-size:15px;
+    color:chocolate;
+}
+
+.card{
+    text-align: center;
+    display: inline-block;
+    width:25%;
+    margin:25px;
+
+}
+
+.cp-main{
+}
+
+h3 a{
+    color: black;
+}
