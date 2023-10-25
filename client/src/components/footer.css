@@ -1,0 +1,51 @@
+.cp-footer {
+  background-color: #BDBDBD;
+  width: 100vw;
+  font-size: medium;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  font-family: "Bangers";
+  font-size: xx-large;
+  color: cornflowerblue;
+}
+
+a {
+  text-decoration: none;
+  color: chocolate;
+  margin: 5px;
+
+}
+
+li a {
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block;
+  color: black;
+}
+
+li a:hover {
+  color: #656565;
+
+}
+
+l {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}

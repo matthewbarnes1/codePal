@@ -1,0 +1,14 @@
+.cart-contents {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    z-index: 1;
+    right: 0;
+    top: 100%;
+  }
+  
+  .cart-contents.active {
+    display: block;
+  }

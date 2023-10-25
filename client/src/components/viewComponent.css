@@ -1,0 +1,85 @@
+.cp-dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-image: url("../assets/scene/indoor02.jpeg");
+    background-repeat: no-repeat;
+    /* background-position: 0 0; */
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.cp-dashboard-title {
+    text-align: center;
+    padding: 10px;
+    font-family: "Emilys Candy";
+    font-size: xx-large;
+    color: var(--medium-pink);
+    text-shadow: var(--dark-pink) 1px 0 10px;
+}
+
+.cp-viewing-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+
+.cp-viewing-area-left {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+    /* padding: 1px; */
+    margin: 15px;
+    border: none;
+    /* border-radius: 10px; */
+    /* background: linear-gradient(var(--medium-pink), var(--dark-pink)); */
+    cursor: pointer;
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    background-color: none; */
+}
+
+.cp-viewing-area-right {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: end;
+    /* padding: 1px; */
+    margin: 15px;
+    border: none;
+    /* border-radius: 10px; */
+    /* background: linear-gradient(var(--medium-pink), var(--dark-pink)); */
+    cursor: pointer;
+
+}
+
+.cp-viewing-area-center {
+    /* border: solid #2a9d8f; */
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 40vw;
+    position: sticky;
+    bottom: 0;
+    height: 80vh;
+
+}
+
+.cp-dashboard-footer {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 1 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body {
+    margin: 0;
+    /* overflow: hidden; */
+}

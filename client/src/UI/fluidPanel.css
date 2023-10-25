@@ -1,0 +1,6 @@
+.cp-fluid-panel {
+    margin: 5px 10px;
+    background: linear-gradient(var(--light-pink), var(--medium-pink));
+    padding: 5px;
+    border-radius: 8px;
+}

@@ -1,0 +1,18 @@
+.cp-header-main {
+    background-color: #BDBDBD;
+    width: 100vw;
+    font-size: medium;
+    color: chocolate;
+    font-family: "Bangers";
+    font-size: xx-large;
+}
+
+.cp-header-main li {
+    padding: 10px;
+    color: chocolate;
+
+}
+
+.cp-header-main li a:hover {
+    color: cornflowerblue;
+}
